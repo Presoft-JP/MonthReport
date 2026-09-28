@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 月次ニュースレター 2026年10月号 | InnoSysTech</title>
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  /* ── 十月配色：Maple Red 紅葉 #C0392B × 橙金 #E67E22（秋の紅葉）──
+     紅葉 #C0392B（主色）／橙金 #E67E22（アクセント）／
+     深紅 #7B241C（濃色）／紅樺 #922B21（タイトル）／
+     淡紅 #F0D0C5（枠線）／背景 #FAF0ED ── */
+  html { background:#FAF0ED; min-height:100%; }
+  body {
+    background:#FAF0ED;
+    font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,'Yu Gothic',sans-serif;
+    font-size:14px; line-height:1.7; color:#1a1a2e;
+    min-height:100vh; padding:32px 16px;
+  }
+
+  .wrapper {
+    max-width:720px; margin:0 auto;
+    background:#fff; border-radius:12px; overflow:hidden;
+    box-shadow:0 4px 28px rgba(0,0,0,0.12);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background:linear-gradient(135deg,#7B241C 0%,#C0392B 55%,#E67E22 100%);
+    padding:38px 44px 30px; text-align:center;
+  }
+  .header .logo   { font-size:22px; font-weight:800; color:#fff; letter-spacing:3px; }
+  .header .logo-s { font-size:10px; color:rgba(255,255,255,.5); letter-spacing:2px; display:block; margin-top:3px; }
+  .header h1      { font-size:24px; font-weight:700; color:#fff; margin:18px 0 6px; }
+  .header .sub    { font-size:13px; color:rgba(255,255,255,.72); }
+  .badge {
+    display:inline-block; margin-top:14px;
+    background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.28);
+    border-radius:20px; padding:4px 16px; font-size:11px; color:#FAF0ED;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    background:#FAF0ED;
+    border-top:1px solid #F0D0C5;
+    border-bottom:1px solid #F0D0C5;
+    padding:16px 44px; font-size:12.5px; color:#455a64; line-height:1.85;
+  }
+
+  /* ── SECTION ── */
+  .section { padding:28px 44px; border-bottom:1px solid #F4DDD5; background:#fff; }
+
+  .sec-head { display:flex; align-items:center; margin-bottom:20px; }
+  .sec-icon {
+    width:40px; height:40px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:19px; flex-shrink:0; margin-right:13px; color:#fff;
+  }
+  .ic-a { background:linear-gradient(135deg,#C0392B,#E67E22); }
+  .ic-b { background:linear-gradient(135deg,#922B21,#C0392B); }
+  .sec-title     { font-size:17px; font-weight:700; color:#922B21; }
+  .sec-title sub { display:block; font-size:10px; font-weight:400; color:#aaa; letter-spacing:1px; margin-top:2px; font-style:normal; }
+
+  /* ── NEWS CARDS ── */
+  .ni {
+    display:grid; grid-template-columns:44px 1fr;
+    column-gap:13px;
+    padding:13px 15px 12px;
+    margin-bottom:9px;
+    background:#FCF4F1; border:1px solid #F0D0C5; border-radius:9px;
+  }
+  .ni-ico {
+    width:38px; height:38px; border-radius:8px;
+    background:#FAF0ED; display:flex; align-items:center;
+    justify-content:center; font-size:18px; flex-shrink:0; margin-top:2px;
+  }
+  .ni-title { font-size:13px; font-weight:700; color:#922B21; margin-bottom:4px; }
+  .ni-body  { font-size:12px; color:#455a64; line-height:1.68; }
+  .ni-body strong { color:#922B21; }
+  .hi {
+    display:inline-block; font-weight:800; color:#C0392B;
+    background:#FAF0ED; padding:0 5px; border-radius:3px;
+  }
+  .ni-src { margin-top:6px; font-size:10.5px; color:#B3766B; }
+  .ni-src a { color:#C0392B; text-decoration:none; }
+  .ni-src a:hover { text-decoration:underline; }
+
+  /* ── CASE TABLE ── */
+  .tbl-wrap { overflow-x:auto; }
+  table.ct { width:100%; border-collapse:collapse; font-size:12px; }
+  table.ct th {
+    background:#C0392B; color:#fff;
+    padding:9px 10px; text-align:left;
+    font-weight:600; font-size:11px; white-space:nowrap;
+  }
+  table.ct td { padding:9px 10px; border-bottom:1px solid #F4DDD5; vertical-align:top; line-height:1.55; }
+  table.ct tr:nth-child(even) td { background:#FCF4F1; }
+  table.ct tr:last-child td { border-bottom:none; }
+  table.ct .co { color:#C0392B; font-weight:600; }
+  table.ct .kp { font-weight:700; color:#C0392B; }
+  table.ct .sm { font-size:10.5px; color:#B3766B; }
+
+  /* ── COMPANY SECTION ── */
+  .cmp {
+    background:linear-gradient(135deg,#7B241C 0%,#922B21 52%,#C0392B 100%);
+    padding:32px 44px 36px;
+    border-top:4px solid #E67E22;   /* 橙金アクセント */
+  }
+  .cmp-eyebrow {
+    font-size:10px; font-weight:700; letter-spacing:3px;
+    color:#E67E22; text-transform:uppercase; margin-bottom:10px;
+  }
+  .cmp-title {
+    font-size:22px; font-weight:800; color:#fff;
+    margin-bottom:6px; line-height:1.3;
+  }
+  .cmp-sub { font-size:12px; color:rgba(255,255,255,.55); margin-bottom:24px; letter-spacing:.5px; }
+
+  /* ── Agent diagram ── */
+  .diagram {
+    background:rgba(0,0,0,.25);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:24px 20px 20px;
+    margin-bottom:22px;
+  }
+  .diag-input {
+    text-align:center; margin-bottom:16px;
+  }
+  .diag-input .box {
+    display:inline-block;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25);
+    border-radius:8px; padding:8px 20px;
+    font-size:12px; color:#FAF0ED; font-weight:600;
+  }
+  .diag-arrow-down {
+    text-align:center; font-size:18px; color:rgba(255,255,255,.4);
+    line-height:1; margin:6px 0;
+  }
+  .diag-main {
+    text-align:center; margin-bottom:14px;
+  }
+  .diag-main .mbox {
+    display:inline-block;
+    background:linear-gradient(135deg,#C0392B,#E67E22);
+    border-radius:10px; padding:10px 24px;
+    font-size:13px; font-weight:800; color:#fff;
+    box-shadow:0 4px 16px rgba(192,57,43,.3);
+  }
+  .diag-main .mbox .msub {
+    display:block; font-size:10px; font-weight:400;
+    color:rgba(255,255,255,.8); margin-top:2px;
+  }
+  /* connector lines */
+  .diag-connectors {
+    display:flex; justify-content:center; align-items:flex-start;
+    gap:0; margin-bottom:0; position:relative;
+  }
+  .diag-line-wrap {
+    display:flex; flex-direction:column; align-items:center;
+    flex:1;
+  }
+  .diag-vline {
+    width:2px; height:20px;
+    background:rgba(255,255,255,.25);
+  }
+  .diag-hline-row {
+    display:flex; justify-content:center; width:100%;
+    position:relative;
+  }
+  /* sub agents */
+  .diag-agents {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:10px; margin-top:0;
+  }
+  .agent-card {
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:8px; padding:10px 8px 8px;
+    text-align:center;
+  }
+  .agent-card .aico { font-size:20px; margin-bottom:4px; }
+  .agent-card .aname {
+    font-size:11px; font-weight:700; color:#E67E22;
+    margin-bottom:2px;
+  }
+  .agent-card .arole { font-size:10px; color:rgba(255,255,255,.5); }
+
+  .diag-output { text-align:center; margin-top:14px; }
+  .diag-output .obox {
+    display:inline-block;
+    background:linear-gradient(135deg,#922B21,#C0392B);
+    border-radius:8px; padding:8px 22px;
+    font-size:12px; font-weight:700; color:#fff;
+    box-shadow:0 3px 12px rgba(192,57,43,.35);
+  }
+
+  /* connector SVG */
+  .diag-svg { display:block; margin:0 auto; overflow:visible; }
+
+  .cc {
+    background:#fff;
+    border:1px solid #F0D0C5;
+    border-radius:10px; padding:18px 22px; margin-bottom:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+  }
+  .cc:last-child { margin-bottom:0; }
+  .cc .ct2  { font-size:13px; font-weight:800; color:#922B21; margin-bottom:8px; }
+  .cc .cb   { font-size:12px; color:#3B221E; line-height:1.78; }
+  .cc .cb strong { color:#C0392B !important; }
+  .point-list {
+    display:grid;
+    gap:8px;
+    margin-top:2px;
+  }
+  .point-item {
+    display:grid;
+    grid-template-columns:24px 1fr;
+    gap:9px;
+    align-items:start;
+  }
+  .point-num {
+    width:24px; height:24px;
+    border-radius:50%;
+    background:#C0392B;
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800;
+    line-height:1;
+  }
+  .point-text { color:#3B221E; font-size:12px; line-height:1.72; }
+  .point-text strong { color:#C0392B !important; }
+  .tnew {
+    display:inline-block; background:#E67E22; color:#fff;   /* 橙金バッジ */
+    font-size:9px; font-weight:700; padding:2px 8px;
+    border-radius:3px; margin-left:7px; vertical-align:middle;
+  }
+  .demo-panel,
+  .robot-panel {
+    margin:16px 0 18px;
+    background:#FCF4F1;
+    border:1px solid #F0D0C5;
+    border-radius:10px;
+    padding:20px;
+  }
+  .demo-stack {
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .flow-node {
+    display:inline-flex; align-items:center; justify-content:center;
+    background:#fff;
+    border:1px solid #E67E22;
+    border-radius:10px;
+    padding:10px 20px;
+    color:#7B241C;
+    font-size:13px; font-weight:800; text-align:center;
+    box-shadow:0 2px 8px rgba(192,57,43,.08);
+  }
+  .flow-node.primary {
+    border:2px solid #C0392B;
+    background:#FAF0ED;
+    min-width:260px;
+  }
+  .flow-node.output {
+    background:#fff;
+    border-color:#E67E22;
+  }
+  .flow-arrow {
+    color:#C0392B;
+    font-size:16px;
+    line-height:1;
+    font-weight:800;
+  }
+  .flow-branches {
+    display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+    width:100%; margin-top:4px;
+  }
+  .flow-agent {
+    background:#FAF0ED;
+    border:1px solid #E67E22;
+    border-radius:10px;
+    padding:10px 16px;
+    color:#922B21;
+    font-size:12px; font-weight:700;
+    min-width:118px; text-align:center;
+  }
+  .robot-panel { text-align:center; }
+  .robot-panel video {
+    max-width:100%;
+    width:560px;
+    border-radius:10px;
+    display:block;
+    margin:0 auto;
+    box-shadow:0 5px 18px rgba(192,57,43,.18);
+  }
+  .robot-panel img {
+    max-width:100%;
+    max-height:520px;
+    border-radius:10px;
+    display:block;
+    margin:0 auto;
+    box-shadow:0 5px 18px rgba(192,57,43,.18);
+  }
+  /* ── 縦並び画像（クリックで拡大）── */
+  .zoom-wrap { display:block; position:relative; margin:14px 0 16px; }
+  .axis-img {
+    display:block; width:100%;
+    border-radius:10px;
+    box-shadow:0 5px 18px rgba(192,57,43,.18);
+    margin:0;
+    cursor:zoom-in;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .zoom-wrap:hover .axis-img { transform:scale(1.012); box-shadow:0 10px 30px rgba(192,57,43,.30); }
+  .zoom-wrap::after {
+    content:'🔍 クリックで拡大';
+    position:absolute; right:10px; bottom:10px;
+    background:rgba(46,15,10,.80); color:#fff;
+    font-size:10.5px; font-weight:600; letter-spacing:.5px;
+    padding:4px 9px; border-radius:5px;
+    opacity:0; transition:opacity .2s; pointer-events:none;
+  }
+  .zoom-wrap:hover::after { opacity:1; }
+  /* ── 拠点カード（必要に応じて使用）── */
+  .axis-loc {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:6px 0 4px;
+  }
+  .axis-loc-card {
+    background:linear-gradient(135deg,#FCF4F1,#FAF0ED);
+    border:1px solid #F0D0C5;
+    border-radius:10px;
+    padding:14px 15px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .axis-loc-card .lic {
+    width:38px; height:38px; border-radius:9px;
+    background:#fff; border:1px solid #F0D0C5;
+    display:flex; align-items:center; justify-content:center;
+    font-size:19px; flex-shrink:0;
+  }
+  .axis-loc-card .lcity { font-size:14px; font-weight:800; color:#7B241C; line-height:1.2; }
+  .axis-loc-card .lsub  { font-size:10.5px; color:#B3766B; margin-top:3px; line-height:1.4; }
+  .lstat-open { color:#1B7A43; font-weight:800; }
+  .lstat-plan { color:#C0392B; font-weight:800; }
+  @media (max-width:560px){ .axis-loc{ grid-template-columns:1fr; } }
+  /* ── 末尾の長い横線（紅葉グラデーション）── */
+  .axis-end {
+    height:4px; border:none; border-radius:2px;
+    background:linear-gradient(90deg, transparent 0%, #C0392B 18%, #E67E22 50%, #C0392B 82%, transparent 100%);
+    margin:22px 0 0;
+  }
+
+  /* ── フォトギャラリー（左右ボタンで切り替え）── */
+  .gal { position:relative; margin:16px 0 4px; }
+  .gal-stage {
+    position:relative; border-radius:10px; overflow:hidden;
+    box-shadow:0 5px 18px rgba(192,57,43,.18); background:#FCF4F1;
+  }
+  .gal-item { display:none; }
+  .gal-item.on { display:block; animation:galFade .3s ease; }
+  .gal-item img { display:block; width:100%; border-radius:10px; }
+  @keyframes galFade { from { opacity:0; } to { opacity:1; } }
+  .gal-btn {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:42px; height:42px; border:none; border-radius:50%;
+    background:rgba(59,23,18,.55); color:#fff;
+    font-size:24px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s; z-index:2;
+  }
+  .gal-btn:hover { background:rgba(105,30,22,.78); }
+  .gal-prev { left:12px; }
+  .gal-next { right:12px; }
+  .gal-nav { display:flex; align-items:center; justify-content:center; gap:9px; margin-top:11px; }
+  .gal-dot {
+    width:9px; height:9px; border-radius:50%; border:none; padding:0;
+    background:#F0D0C5; cursor:pointer;
+    transition:background .2s, transform .2s;
+  }
+  .gal-dot.on { background:#C0392B; transform:scale(1.3); }
+  .gal-count { font-size:11px; font-weight:700; color:#B3766B; letter-spacing:1.5px; margin-left:6px; }
+
+  /* ── 画像ライトボックス（クリックで拡大）── */
+  .lightbox {
+    position:fixed; inset:0; z-index:9999;
+    background:rgba(30,10,6,.93);
+    display:flex; align-items:center; justify-content:center;
+    padding:36px;
+    opacity:0; visibility:hidden;
+    transition:opacity .25s ease, visibility .25s ease;
+    cursor:zoom-out;
+  }
+  .lightbox.open { opacity:1; visibility:visible; }
+  .lightbox img {
+    max-width:92vw; max-height:88vh;
+    border-radius:8px;
+    box-shadow:0 14px 50px rgba(0,0,0,.55);
+    cursor:default;
+  }
+  .lightbox-close {
+    position:absolute; top:18px; right:26px;
+    width:44px; height:44px; border:none; border-radius:50%;
+    background:rgba(255,255,255,.16); color:#fff;
+    font-size:26px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s, transform .2s;
+  }
+  .lightbox-close:hover { background:rgba(255,255,255,.32); transform:rotate(90deg); }
+
+  /* ── FOOTER ── */
+  .footer { background:#5E1A12; padding:22px 44px; text-align:center; }
+  .footer .fl  { font-size:15px; font-weight:700; color:#fff; letter-spacing:2px; margin-bottom:5px; }
+  .footer a    { color:#E67E22; text-decoration:none; font-size:12px; }
+  .footer .fn  { margin-top:11px; font-size:10.5px; color:rgba(255,255,255,.35); line-height:1.75; }
+
+  /* ── PRINT ── */
+  @media print {
+    @page { size:A4; margin:12mm 10mm; }
+    html, body { background:#FAF0ED !important; padding:0 !important;
+      -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .wrapper { box-shadow:none !important; border-radius:0 !important; max-width:100% !important; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .ni, .cc, .agent-card, table.ct tr, .sec-head, .diagram { break-inside:avoid !important; page-break-inside:avoid !important; }
+    .ni-ico { break-inside:avoid !important; }
+    .sec-head { break-after:avoid !important; }
+    .rtag + .ni { break-before:avoid !important; }
+    .cmp { break-before:avoid !important; }
+    .lightbox { display:none !important; }
+    .gal-stage { overflow:visible !important; box-shadow:none !important; }
+    .gal-item { display:block !important; }
+    .gal-item img { margin:0 0 10px; }
+    .gal-btn, .gal-nav { display:none !important; }
+    .zoom-wrap::after { display:none !important; }
+    .axis-img { cursor:default !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="logo">InnoSysTech<span class="logo-s">AI SOLUTIONS PARTNER</span></span>
+    <h1>AI 月次ニュースレター</h1>
+    <div class="sub">世界の最新 AI 動向と InnoSysTech の取り組みをお届けします</div>
+    <div class="badge">📅 2026年10月号 ｜ Vol.07</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    平素より大変お世話になっております。<strong>InnoSysTech</strong> です。<br>
+    9月上旬〜10月初旬の AI 動向を厳選5トピックでお届けするとともに、業種別の導入実例と当社の最新取り組みをご紹介します。
+  </div>
+
+  <!-- ═══ MODULE A：ニュース ═══ -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-icon ic-a">🌐</div>
+      <div class="sec-title">AI 最新ニュース 厳選5トピック
+        <sub>GLOBAL AI NEWS — OCTOBER 2026</sub>
+      </div>
+    </div>
+
+    <!-- ① Figure Helix 2.5 -->
+    <div class="ni">
+      <div class="ni-ico">🤖</div>
+      <div>
+        <div class="ni-title">Figure ― 新世代ニューラルネットワーク「Helix 2.5」、未知の家庭30世帯でゼロショット汎化を達成（9月）</div>
+        <div class="ni-body">米ロボット企業 <strong>Figure</strong> は、同社が開発したニューラルネットワークとして最も先進的な <strong>Helix 2.5</strong> を発表した。人型ロボットが<strong>初めて訪れる未知の家庭</strong>にそのまま入り、事前の環境学習なしで作業を開始できる <span class="hi">ゼロショット汎化</span> を、間取りや家具の異なる <span class="hi">30世帯</span> の実家庭で検証。複数ステップからなる<strong>長時間の全身協調作業</strong>を自律的に完遂できることを示し、実環境への適応力が問われる家庭ユースケースでの実用化を大きく前進させた。</div>
+        <div class="ni-src">📎 <a href="https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization" target="_blank">Figure 公式</a></div>
+      </div>
+    </div>
+
+    <!-- ② OpenAI GPT-6 Astra -->
+    <div class="ni">
+      <div class="ni-ico">🧠</div>
+      <div>
+        <div class="ni-title">OpenAI ― 最上位モデル「GPT-6 Astra」発表、コンピューター操作のエージェント業務で最先端（9月）</div>
+        <div class="ni-body">OpenAI は、コンピューター操作・コーディング・サイバーセキュリティ・科学の各分野で最先端の能力を備えた最上位モデル <strong>GPT-6 Astra</strong> を発表した。パソコン画面の操作を自動化するベンチマーク OSWorld では <span class="hi">72.6%</span> を達成し、同じタスクを GPT-6 Sol 比で約 <span class="hi">47%高速</span> に完遂。難問数学の FrontierMath Tier 4 で <span class="hi">98%</span> を記録したほか、人間の指示の範囲を超える行動の発生率は <span class="hi">0%</span> と性能と安全性を両立した。ChatGPT の有償プラン・API・Azure・AWS Bedrock で利用可能で、9月22日には兄弟モデル GPT-6 Sol・Luna が加わりファミリー展開が進んでいる。</div>
+        <div class="ni-src">📎 <a href="https://openai.com/ja-JP/index/gpt-6-astra/" target="_blank">OpenAI 公式</a></div>
+      </div>
+    </div>
+
+    <!-- ③ Meta Muse -->
+    <div class="ni">
+      <div class="ni-ico">💬</div>
+      <div>
+        <div class="ni-title">Meta ― 世界初の個人向けAIエージェント「Muse」発表、メール送信から決済まで代行（9/8）</div>
+        <div class="ni-body">Meta は、セキュリティとプライバシーを前提に設計した個人向けAIエージェント <strong>Muse</strong> を発表した。ユーザーの目標達成を<strong>能動的に支援</strong>してアイデアを提案するのが特徴で、他のアプリへのアクセスを許可すれば <strong>メール送信・旅行予約・決済</strong> などを本人に代わって自律実行できる。対話型チャットボットではなく「日常のタスクを頼める」パーソナルアシスタントをすべてのユーザーに提供する世界初の取り組みで、消費者向けAIエージェント市場の本格的な幕開けとして注目される。</div>
+        <div class="ni-src">📎 <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank">Meta 公式（2026/9/8）</a> ／ <a href="https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/" target="_blank">Reuters（2026/9/8）</a></div>
+      </div>
+    </div>
+
+    <!-- ④ 中国 無人配送車 -->
+    <div class="ni">
+      <div class="ni-ico">🚚</div>
+      <div>
+        <div class="ni-title">中国の「無人配送車」― SNSで話題のロボバン、主戦場は郊外の固定ルート（9/25）</div>
+        <div class="ni-body">中国版TikTokなどSNSでは悪路を行く無人配送車（ロボバン）の動画が拡散されているが、実際の主戦場は市街地ではなく<strong>開発区や工業団地など郊外の固定ルート</strong>だ。広東省仏山市の配送営業所では新石器（Neolix）製を導入し、ラストワンマイルの総コスト <span class="hi">30%減</span>・配送員の移動時間 <span class="hi">40%減</span> を達成。深圳のSFエクスプレス（順豊）中継センターでは夜間に <span class="hi">1日60便・約10分間隔</span> で運行し、全体効率が <span class="hi">20%以上改善</span> した。「配送員の代替」ではなく<strong>負担の大きい往復業務からの解放</strong>として定着しつつある。</div>
+        <div class="ni-src">📎 <a href="https://36kr.jp/502597/" target="_blank">36Kr Japan（2026/9/25）</a></div>
+      </div>
+    </div>
+
+    <!-- ⑤ Amoo -->
+    <div class="ni">
+      <div class="ni-ico">🧸</div>
+      <div>
+        <div class="ni-title">Amoo ― 「家事をしない」80cmのふわふわ人型ロボット、AIコンパニオン市場を狙う（9/22）</div>
+        <div class="ni-body">上海発のエンボディドAI企業<strong>青心意創</strong>が展開する、高さ <span class="hi">80cm足らず</span> のぬいぐるみのような人型ロボット <strong>Amoo</strong>。料理や洗濯ではなく「<strong>人に寄り添うこと</strong>」を主役に据え、視覚・音声・触覚のマルチモーダルセンサーで言葉や表情を認識し、視線合わせ・握手・ダンスなど自然な反応で応じる。エンボディドAI向け基盤モデル <strong>Dino OS</strong> は、シーン理解の「遅い脳」と即時反応の「速い脳」を使い分けてAI特有の待ち時間を削減。上海の高級ホテルでの試験導入など商用展開も始まっており、画面の中のAIを生活空間へ引き出す <span class="hi">AIコンパニオン</span> 市場の開拓が注目される。</div>
+        <div class="ni-src">📎 <a href="https://36kr.jp/501427/" target="_blank">36Kr Japan（2026/9/22）</a></div>
+      </div>
+    </div>
+
+  </div><!-- /section A -->
+
+  <!-- ═══ MODULE B：導入事例 ═══ -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-icon ic-b">💼</div>
+      <div class="sec-title">業種別 AI 活用 実例
+        <sub>AI BUSINESS USE CASES — OCTOBER 2026</sub>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="ct">
+        <thead>
+          <tr><th>企業名</th><th>国</th><th>業種</th><th>AI 活用内容・効果</th><th>出典</th></tr>
+        </thead>
+        <tbody>
+          <!-- ① ダイフク × JDSC -->
+          <tr>
+            <td class="co">ダイフク × JDSC</td><td>🇯🇵</td><td class="sm">物流／フィジカルAI</td>
+            <td>物流システム大手ダイフクは JDSC と共同で、<span class="kp">自然言語の指示</span> と周囲の状況を理解し、ロボットの動作を自律的に計画・実行する <span class="kp">AIエージェント</span> 型 <span class="kp">フィジカルAI</span> 技術を検証。<span class="kp">物流の完全無人化</span> を見据えた取り組みとして注目される。</td>
+            <td class="sm"><a href="https://www.daifuku.com/jp/company/news/2026/0909_01/" target="_blank">ダイフク公式（9/9）</a></td>
+          </tr>
+          <!-- ② KDDI × ローソン -->
+          <tr>
+            <td class="co">KDDI × ローソン</td><td>🇯🇵</td><td class="sm">小売・物流／ロボット</td>
+            <td>KDDI は小売・物流向け <span class="kp">ロボット基盤モデル</span> の研究開発で、国家プロジェクト <span class="kp">GENIAC</span> に採択。<span class="kp">ローソン店舗の作業データ</span> でロボットを学習させ、人手不足が深刻な小売・物流現場での <span class="kp">フィジカルAIの社会実装</span> を加速する。</td>
+            <td class="sm"><a href="https://newsroom.kddi.com/news/detail/kddi_nr-1155_4708.html" target="_blank">KDDI（9/9）</a></td>
+          </tr>
+          <!-- ③ Kimi 金融業界AIソリューション -->
+          <tr>
+            <td class="co">月之暗面（Moonshot AI）</td><td>🇨🇳</td><td class="sm">金融／AIソリューション</td>
+            <td>月之暗面は9月17日、<span class="kp">Kimi 金融業界AIソリューション</span> を発表。<span class="kp">10以上の権威あるデータソース</span> と <span class="kp">9つの金融スキル</span>、5項目の <span class="kp">コンプライアンス・セキュリティ</span> 対策を統合し、機関グレードの <span class="kp">データモデリングとレポート作成</span> を自動化。すでに数十の金融機関で導入が進む。</td>
+            <td class="sm"><a href="https://www.kimi.com/news/kimi-financial-industry-ai-solution" target="_blank">Kimi 公式（9/17）</a></td>
+          </tr>
+          <!-- ④ シャープ 道路損傷自動検知 -->
+          <tr>
+            <td class="co">シャープ × 首都高技術</td><td>🇯🇵</td><td class="sm">インフラ点検／画像AI</td>
+            <td>シャープと首都高技術は、走行中に撮影した道路映像から <span class="kp">落下物やポットホール</span> などの損傷をリアルタイムに自動検知・通知する <span class="kp">道路損傷自動検知システム</span> の実証実験を10月に開始。<span class="kp">道路点検の担い手不足</span> への対応を狙う。</td>
+            <td class="sm"><a href="https://corporate.jp.sharp/news/260924-a.html" target="_blank">シャープ公式（9/24）</a></td>
+          </tr>
+          <!-- ⑤ 未来不遠 家庭用ヒューマノイド -->
+          <tr>
+            <td class="co">未来不遠（Futuring Robot）</td><td>🇨🇳</td><td class="sm">家庭用ロボット／リース</td>
+            <td>家庭用車輪型ヒューマノイドの中国スタートアップ未来不遠は、プレシリーズAで約 <span class="kp">240億円</span> を調達し同分野の最高額を更新。転倒リスクを抑えた <span class="kp">車輪＋双腕</span> 設計で <span class="kp">約500世帯</span> での実証を進め、月額 <span class="kp">約7万円のリース</span> で提供する。子どもの読み聞かせや英会話、簡単な家事、ペットの世話などを担う。</td>
+            <td class="sm"><a href="https://36kr.jp/501126/" target="_blank">36Kr Japan（9/12）</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ MODULE C：InnoSysTech ═══ -->
+  <div class="cmp">
+
+    <div class="cmp-eyebrow">✦ InnoSysTech の最新取り組み</div>
+    <div class="cmp-title">AI 最新進捗</div>
+    <div class="cmp-sub">OUR LATEST AI INITIATIVES — OCTOBER 2026</div>
+
+    <div class="cc">
+      <div class="ct2">大連「AXIS」― ご来館プログラムを完結、プロモーション動画を制作中 <span class="tnew">PROMO VIDEO</span></div>
+
+      <div class="cb">
+        9月、大連の体験型ショールーム <strong>「AXIS」</strong> は最後のご来館者の皆様をお迎えし、8月のオープンから続いたご来館プログラムを <strong>好評のうちに完結</strong> いたしました。今月はもう一つの大きな柱として、館内の体験を伝える <strong>プロモーション動画</strong> の撮影・編集にも取り組みました。
+      </div>
+
+      <div class="ct2" style="margin-top:18px;">プロモーション動画 ― 先行公開</div>
+
+      <div class="robot-panel">
+        <div style="font-size:11.5px; color:#922B21; margin-bottom:10px; font-weight:600;">🎬 AXIS プロモーション動画（先行抜粋）― ぜひ再生してお確かめください 🎥</div>
+        <video controls preload="metadata">
+          <source src="宣传片.mp4" type="video/mp4">
+          お使いのブラウザは動画再生に対応していません。
+        </video>
+      </div>
+
+      <div class="cb" style="margin-top:2px;">
+        ※ 上の動画は先行公開の抜粋です。館内の体験をまとめた <strong>完全版は近日公開予定</strong>。公開まで今しばらくお待ちください。
+      </div>
+
+      <div class="cb point-list" style="margin-top:16px;">
+        <div class="point-item">
+          <span class="point-num">1</span>
+          <div class="point-text"><strong>最後のご来館者をお迎え：</strong> 今月も複数の企業・団体のお客様にご来館いただき、視察・体験・商談を実施。オープン以来のご来館プログラムを、お客様の温かい声とともに完走いたしました。</div>
+        </div>
+        <div class="point-item">
+          <span class="point-num">2</span>
+          <div class="point-text"><strong>プロモーション動画を撮影・制作：</strong> 館内5つの体験エリアと実機デモの様子を撮影し、編集作業を進めています。AXISで体感できる「未来」を、1本の動画に凝縮します。</div>
+        </div>
+        <div class="point-item">
+          <span class="point-num">3</span>
+          <div class="point-text"><strong>東京・IST Japan ショールームの開業へ：</strong> 大連で得たお客様の声と運用の知見を日本へ持ち帰り、東京でのショールーム開業準備を着実に進めています。</div>
+        </div>
+      </div>
+
+      <div class="ct2" style="margin-top:18px;">今後の展開</div>
+      <div class="axis-loc">
+        <div class="axis-loc-card">
+          <div class="lic">📍</div>
+          <div>
+            <div class="lcity">大連（中国・遼寧省）</div>
+            <div class="lsub"><span class="lstat-open">2026年8月オープン・ご来館プログラム完結</span></div>
+          </div>
+        </div>
+        <div class="axis-loc-card">
+          <div class="lic">🗼</div>
+          <div>
+            <div class="lcity">東京（日本）</div>
+            <div class="lsub"><span class="lstat-plan">開業準備中 ― オープンをお楽しみに</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb" style="margin-top:14px; padding-top:12px; border-top:1px solid #F0D0C5;">
+        大連「AXIS」での体験は、プロモーション動画と東京拠点という形で次のステージへつながります。<strong>「見える未来から、使える未来へ。」</strong> ― <strong>IST Japan（東京）ショールーム</strong>の開業を、どうぞご期待ください。
+      </div>
+      <hr class="axis-end">
+    </div>
+
+  </div><!-- /cmp -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="fl">InnoSysTech</div>
+    <div><a href="https://innosystech.jp/" target="_blank">https://innosystech.jp/</a></div>
+    <div class="fn">
+      本ニュースレターは信頼性の高い各社公式発表・専門メディア報道等をもとに作成しています。<br>
+      掲載情報は投資判断等の根拠としてのご利用はご遠慮ください。<br>
+      © 2026 InnoSysTech. All rights reserved.
+    </div>
+  </div>
+
+</div>
+
+<!-- ライトボックス（画像クリックで拡大表示）-->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="閉じる">×</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lightboxImg');
+  var imgs=document.querySelectorAll('.axis-img');
+  for(var i=0;i<imgs.length;i++){
+    imgs[i].addEventListener('click',function(){
+      lbImg.src=this.getAttribute('data-full')||this.src; lbImg.alt=this.alt;
+      lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+    });
+  }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+  document.getElementById('lightboxClose').addEventListener('click',close);
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'||e.keyCode===27) close(); });
+})();
+
+/* フォトギャラリー（左右ボタン・ドット・キーボードで切り替え） */
+(function(){
+  var items=document.querySelectorAll('.gal-item');
+  var dots=document.querySelectorAll('.gal-dot');
+  var count=document.getElementById('galCount');
+  if(!items.length) return;
+  var cur=0;
+  function show(i){
+    cur=(i+items.length)%items.length;
+    for(var k=0;k<items.length;k++){
+      items[k].classList.toggle('on',k===cur);
+      if(dots[k]) dots[k].classList.toggle('on',k===cur);
+    }
+    if(count) count.textContent=(cur+1)+' / '+items.length;
+  }
+  var prev=document.getElementById('galPrev'), next=document.getElementById('galNext');
+  if(prev) prev.addEventListener('click',function(){ show(cur-1); });
+  if(next) next.addEventListener('click',function(){ show(cur+1); });
+  for(var n=0;n<dots.length;n++){
+    (function(idx){ if(dots[idx]) dots[idx].addEventListener('click',function(){ show(idx); }); })(n);
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft') show(cur-1);
+    else if(e.key==='ArrowRight') show(cur+1);
+  });
+})();
+</script>
+</body>
+</html>
